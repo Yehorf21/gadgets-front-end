@@ -2,9 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 import { Product } from '../../../types/Product';
 import { ProductCard } from '../ProductCard/ProductCard';
 import { useAppSelector } from '../../../store/hooks';
@@ -13,8 +10,6 @@ interface Props {
   products: Product[];
   title: string;
 }
-
-gsap.registerPlugin(ScrollTrigger);
 
 export const ProductsScroller: React.FC<Props> = ({ products, title }) => {
   const { viewportWidth } = useAppSelector(state => state.viewport);
